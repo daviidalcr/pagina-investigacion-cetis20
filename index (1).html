@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación: El Impacto del Fentanilo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-color: #e11d48;
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+            --bg-light: #f1f5f9;
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        header { background-color: rgba(15, 23, 42, 0.95); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); backdrop-filter: blur(10px); }
+        .navbar { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { color: var(--text-light); font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--accent-color); }
+        .nav-menu { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-menu a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition); padding: 0.5rem 0.7rem; border-radius: 4px; }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--text-light); background-color: var(--accent-color); }
+        #hero { background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 100%, rgba(30, 41, 59, 0.8) 100%), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200') no-repeat center center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light); padding: 0 1rem; }
+        .hero-content { max-width: 800px; animation: fadeIn 1.5s ease; }
+        .hero-tag { background-color: var(--accent-color); color: white; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 1.5rem; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .hero-content p { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2rem; }
+        .btn { background-color: var(--accent-color); color: white; padding: 0.75rem 2rem; border: none; border-radius: 5px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: var(--transition); display: inline-block; box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(225, 29, 72, 0.6); }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; scroll-margin-top: 70px; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--primary-color); margin-bottom: 3rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--accent-color); margin: 10px auto 0; border-radius: 2px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center; }
+        .card { background-color: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-left: 5px solid var(--accent-color); transition: var(--transition); }
+        .card:hover { transform: translateY(-5px); }
+        .intro-text p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #475569; }
+        .interactive-badge { display: inline-flex; align-items: center; gap: 8px; background-color: #ffe4e6; color: var(--accent-color); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; margin-top: 1rem; }
+        .problema-box { background-color: var(--primary-color); color: var(--text-light); padding: 3rem; border-radius: 16px; position: relative; overflow: hidden; }
+        .problema-box h3 { color: #fda4af; margin-bottom: 1rem; }
+        .alert-icon { font-size: 4rem; position: absolute; right: -10px; bottom: -10px; color: rgba(225, 29, 72, 0.15); }
+        .obj-list { list-style: none; }
+        .obj-list li { margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 15px; font-size: 1.05rem; }
+        .obj-list i { color: var(--accent-color); margin-top: 5px; font-size: 1.2rem; }
+        .hipotesis-container { background-color: #f8fafc; border: 2px dashed #cbd5e1; padding: 2.5rem; border-radius: 12px; text-align: center; }
+        .hipotesis-statement { font-size: 1.3rem; font-style: italic; color: var(--primary-color); font-weight: 600; margin: 1.5rem 0; }
+        .ia-section { background-color: var(--secondary-color); color: var(--text-light); border-radius: 16px; padding: 3rem 2rem; margin: 3rem auto; text-align: center; }
+        .ia-section h3 { margin-bottom: 1rem; color: #93c5fd; }
+        .interactive-box { margin-top: 2rem; }
+        .btn-interactive { background-color: #3b82f6; color: white; padding: 0.6rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; margin: 5px; transition: var(--transition); }
+        .btn-interactive:hover { background-color: #2563eb; }
+        .display-data { background-color: var(--primary-color); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; min-height: 80px; display: flex; align-items: center; justify-content: center; border: 1px solid #334155; font-size: 1.05rem; }
+        .conclusion-wrapper { background-color: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        footer { background-color: var(--primary-color); color: #94a3b8; text-align: center; padding: 2rem; margin-top: 4rem; font-size: 0.9rem; border-top: 3px solid var(--accent-color); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .nav-menu { display: none; } .hero-content h1 { font-size: 2rem; } section { padding: 3rem 1rem; } .problema-box, .card { padding: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Salud<span>Pública</span></strong></div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="active">Inicio</a></li>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#hipotesis">Hypótesis</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Investigación Científica y Tecnológica</span>
+            <h1>El Impacto del Fentanilo en la Salud Global</h1>
+            <p>Un análisis interdisciplinario sobre una de las crisis sanitarias más agudas, optimizado con Inteligencia Artificial.</p>
+            <a href="#introduccion" class="btn">Explorar Investigación <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </section>
+    <section id="introduccion">
+        <h2 class="section-title">Introducción</h2>
+        <div class="grid-2">
+            <div class="intro-text">
+                <p>El fentanilo es un potente opioide sintético diseñado originalmente para el manejo del dolor severo en entornos clínicos. Sin embargo, su fabricación ilícita ha transformado este fármaco en el principal impulsor de crisis de sobredosis a nivel mundial.</p>
+                <div class="interactive-badge"><i class="fa-solid fa-microscope"></i> Perspectiva Médica y Social</div>
+            </div>
+            <div class="card">
+                <h3>Contexto Químico</h3>
+                <p style="margin-top:1rem; color:#475569;">Es completamente sintético. Su alta solubilidad en lípidos le permite cruzar la barrera hematoencefálica con extrema rapidez, fijándose firmemente a los receptores del cerebro.</p>
+            </div>
+        </div>
+    </section>
+    <section id="problema">
+        <h2 class="section-title">Problema de Investigación</h2>
+        <div class="problema-box">
+            <h3>¿Cuál es el núcleo de la problemática actual?</h3>
+            <p style="font-size: 1.15rem; color: #e2e8f0; margin-bottom: 1.5rem;">La rápida proliferación de análogos del fentanilo y su mezcla imperceptible con otras sustancias han generado un incremento exponencial en las tasas de mortalidad. El peligro radica en que la extrema potencia del compuesto reduce el margen de error entre una dosis activa y una letal a fracciones de miligramo.</p>
+            <i class="fa-solid fa-skull-crossbones alert-icon"></i>
+        </div>
+    </section>
+    <section id="objetivos">
+        <h2 class="section-title">Objetivos</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="margin-bottom: 1rem;"><i class="fa-solid fa-bullseye" style="color:var(--accent-color);"></i> Objetivo General</h3>
+                <p>Analizar los factores farmacológicos y sociales que determinan la letalidad del fentanilo para proponer lineamientos de intervención basados en evidencia científica y soporte digital.</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1.5rem;">Objetivos Específicos</h3>
+                <ul class="obj-list">
+                    <li><i class="fa-solid fa-circle-check"></i> <span>Identificar el mecanismo neurobiológico que lo hace altamente adictivo.</span></li>
+                    <li><i class="fa-solid fa-circle-check"></i> <span>Demostrar la utilidad de las herramientas analíticas y de la IA en el mapeo preventivo de brotes sanitarios.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="hipotesis">
+        <h2 class="section-title">Hipótesis</h2>
+        <div class="hipotesis-container">
+            <i class="fa-solid fa-lightbulb" style="font-size: 2.5rem; color: #eab308;"></i>
+            <p class="hipotesis-statement">"Si la extrema letalidad del fentanilo ilícito se debe a la falta de control sobre su dosificación microscópica, entonces la implementación de tecnologías analíticas digitales y algoritmos de IA predictiva disminuirá la tasa de mortalidad al anticipar zonas de riesgo."</p>
+        </div>
+    </section>
+    <section id="herramientas">
+        <div class="ia-section">
+            <h3><i class="fa-solid fa-robot"></i> Componente de Innovación Digital</h3>
+            <div class="interactive-box">
+                <button class="btn-interactive" onclick="mostrarDatos('modelo')">Modelado Predictivo IA</button>
+                <button class="btn-interactive" onclick="mostrarDatos('quimica')">Análisis Químico Digital</button>
+                <div class="display-data" id="ia-output">Selecciona una herramienta arriba para comprobar el funcionamiento.</div>
+            </div>
+        </div>
+    </section>
+    <section id="conclusion">
+        <h2 class="section-title">Conclusión</h2>
+        <div class="conclusion-wrapper">
+            <p style="font-size:1.1rem; color:#334155;">Para reducir el impacto de esta crisis, es indispensable coordinar la ciencia médica con las herramientas digitales y la Inteligencia Artificial, empleando modelos automatizados que detecten patrones de riesgo para salvaguardar la salud pública.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 - Proyecto de Investigación Científica.</p>
+    </footer>
+    <script>
+        function mostrarDatos(tipo) {
+            const output = document.getElementById('ia-output');
+            if (tipo === 'modelo') { output.innerHTML = "<strong>Modelado Predictivo:</strong> Algoritmos que procesan datos de admisiones hospitalarias para predecir brotes con precisión geográfica."; }
+            else if (tipo === 'quimica') { output.innerHTML = "<strong>Análisis Digital:</strong> Simulación por IA de la estructura molecular para agilizar el diseño de antídotos eficientes."; }
+            output.style.animation = 'none'; setTimeout(() => { output.style.animation = 'fadeIn 0.5s ease'; }, 10);
+        }
+    </script>
+</body>
+</html>
